@@ -3,7 +3,7 @@
  * This script connects to MongoDB and populates the database with initial data.
  *
  * To run this script, navigate to your project folder in the terminal and execute:
- * node seed.js
+ * node db_init.js
  */
 
 // Load environment variables from .env file
@@ -88,7 +88,7 @@ const projects = [
             },
         ],
         images: ['https://placehold.co/600x400/000/FFF?text=Kitchen+1', 'https://placehold.co/600x400/000/FFF?text=Kitchen+2'],
-        workType: 'Kitchen',
+        workType: 'kitchen-remodeling',
         finishDate: new Date('2024-05-15T00:00:00Z'),
         status: 'done'
     },
@@ -109,7 +109,7 @@ const projects = [
             },
         ],
         images: ['https://placehold.co/600x400/000/FFF?text=Bathroom+1', 'https://placehold.co/600x400/000/FFF?text=Bathroom+2'],
-        workType: 'Bathroom',
+        workType: 'bathroom-renovation',
         finishDate: new Date('2024-03-20T00:00:00Z'),
         status: 'done'
     },

@@ -4,8 +4,8 @@ const pageContentSchema = new mongoose.Schema({
     pageName: { type: String, required: true, unique: true },
     content: [
         {
-            element: { type: String, required: true }, // e.g., 'title', 'paragraph', 'image', 'beforeImage', 'afterImage'
-            data: { type: mongoose.Schema.Types.Mixed, required: true } // The actual content
+            type: mongoose.Schema.Types.Mixed,
+            required: true
         }
     ] // Store content as a generic object
 });
