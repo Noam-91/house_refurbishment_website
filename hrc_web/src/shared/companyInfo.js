@@ -27,7 +27,6 @@ const email = {
 }
 
 
-
 const companyInfo = {
     tel,offices,socialMedia,email
 }

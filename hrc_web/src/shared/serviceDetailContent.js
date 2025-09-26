@@ -1,5 +1,3 @@
-
-
 export const fullHouseRefurbishmentServiceData = {
     title: 'Full House Refurbishment',
     introText: 'From foundation to finishing touches, we handle every aspect of your full-house refurbishment. Our comprehensive approach ensures a cohesive design and seamless execution, transforming your entire home into a functional and beautiful space. We coordinate all trades and manage the project from start to finish, providing a stress-free experience.',
