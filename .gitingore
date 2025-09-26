@@ -1,0 +1,56 @@
+----------------------------------------------------------------------
+GLOBAL IGNORES
+These apply to all Node.js and React projects
+----------------------------------------------------------------------
+Dependencies
+All Node dependencies folders (usually one for the backend and one for the frontend)
+node_modules
+
+Yarn and npm lock files
+package-lock.json
+yarn.lock
+
+Logs and Debugging
+npm-debug.log*
+.nyc_output/
+coverage/
+*.lcov
+.DS_Store # Mac operating system files
+
+----------------------------------------------------------------------
+BACKEND (Node.js/Express) IGNORES
+----------------------------------------------------------------------
+Environment Variables
+Crucial for security: never commit your sensitive keys
+.env
+.env.*
+.env.local
+
+Database/Storage
+*.sqlite
+*.sqlite-journal
+
+Compiled/Dist files (if running TypeScript or Babel on the server)
+/dist
+/build
+/output
+
+----------------------------------------------------------------------
+FRONTEND (React) IGNORES
+Assuming typical setup where the frontend is inside a subdirectory
+----------------------------------------------------------------------
+Production build files
+Files created when you run 'npm run build' or 'yarn build'
+/client/build
+/frontend/build
+/dist
+.cache
+.parcel-cache
+
+Development servers
+.next/ # For Next.js projects
+.vercel/ # For Vercel deployment
+.nuxt/ # For Nuxt.js projects
+
+Source map files
+*.map
