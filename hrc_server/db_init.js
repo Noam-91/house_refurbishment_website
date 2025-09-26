@@ -12,7 +12,6 @@ import 'dotenv/config.js'
 // Import required modules
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import * as path from "node:path";
 
 // --- Import Mongoose Models ---
 import User from "./mongo/User.js";
