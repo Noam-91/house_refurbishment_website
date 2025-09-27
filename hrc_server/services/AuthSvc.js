@@ -41,7 +41,14 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ message: 'Invalid credentials.' });
         }
         const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
-        res.json({ message: 'Logged in successfully.', token });
+        // Set the JWT as an httpOnly cookie
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            maxAge: 3600000 // 1 hour
+        });
+        res.json({ message: 'Logged in successfully.' });
     } catch (err) {
         res.status(500).json({ error: 'Error during login.', details: err.message });
     }
