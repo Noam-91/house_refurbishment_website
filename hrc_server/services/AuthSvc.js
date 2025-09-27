@@ -61,34 +61,6 @@ router.post('/logout', authenticateToken, (req, res) => {
     res.json({ message: 'Logged out successfully.' });
 });
 
-
-// PUT /api/auth/users/:id
-// This route allows an admin or the user themselves to edit a specific user profile.
-router.put('/users/:id', authenticateToken, async (req, res) => {
-    try {
-        const userIdToEdit = req.params.id;
-        const authenticatedUserId = req.user.id;
-        const authenticatedUserRole = req.user.role;
-
-        // Check if the authenticated user is the owner or an admin
-        if (userIdToEdit !== authenticatedUserId && authenticatedUserRole !== 'admin') {
-            return res.status(403).json({ message: 'Access denied. You can only edit your own profile or must be an admin.' });
-        }
-
-        const { newUsername, newEmail, newPassword } = req.body;
-        const updates = {};
-        if (newUsername) updates.username = newUsername;
-        if (newEmail) updates.email = newEmail;
-        if (newPassword) updates.password = await bcrypt.hash(newPassword, 10);
-
-        await User.findByIdAndUpdate(userIdToEdit, updates);
-        res.json({ message: 'User profile updated successfully.' });
-
-    } catch (err) {
-        res.status(500).json({ error: 'Error updating user profile.', details: err.message });
-    }
-});
-
 // GET /api/auth/checkAuth
 router.get('/checkAuth', authenticateToken, (req, res) => {
     // The authenticateToken middleware handles the validation.

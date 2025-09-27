@@ -26,6 +26,9 @@ mongoose.connect(MONGODB_URI)
 // --- Auth ---
 import authRoutes from './services/AuthSvc.js'
 app.use('/api/auth', authRoutes);
+// --- User ---
+import userRoutes from './services/UserSvc.js'
+app.use('/api/user', userRoutes);
 // --- Blog ---
 import blogRoutes from './services/BlogSvc.js';
 app.use('/api/blog',blogRoutes);
