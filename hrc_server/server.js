@@ -58,5 +58,5 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// Export the app for testing purposes
+// Export the app
 export default app;

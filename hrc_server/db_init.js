@@ -119,6 +119,65 @@ const pageContent = [
     {
         pageName: 'services',
         content: {
+            services:[
+                {
+                    title: 'Full House Refurbishment',
+                    description: 'Complete home makeovers from foundation to finishing touches. We coordinate all aspects of your renovation project.',
+                    features: ['Structural updates', 'Electrical work', 'Plumbing systems', 'HVAC integration', 'Interior finishing'],
+                    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    path: '/services/full-house-refurbishment'
+                },
+                {
+                    title: 'Kitchen Remodeling',
+                    description: 'Complete kitchen transformations with modern designs and premium materials. From cabinet installation to appliance integration, we handle every detail.',
+                    features: ['Custom cabinetry', 'Appliance installation', 'Countertop replacement', 'Lighting design', 'Plumbing updates'],
+                    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    path: '/services/kitchen-remodeling'
+                },
+                {
+                    title: 'Bathroom Renovation',
+                    description: 'Luxury bathroom renovations that combine style with functionality. We create spa-like environments tailored to your preferences.',
+                    features: ['Tile installation', 'Fixture replacement', 'Vanity design', 'Shower/tub systems', 'Ventilation'],
+                    image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    path: '/services/bathroom-renovation'
+                },
+                {
+                    title: 'Interior Design',
+                    description: 'Professional interior design services to maximize your space potential. We create functional and beautiful living spaces.',
+                    features: ['Space planning', 'Color consultation', 'Furniture selection', 'Decor styling', 'Custom solutions'],
+                    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    path: '/services/interior-design'
+                },
+                {
+                    title: 'Flooring Installation',
+                    description: 'Professional flooring installation with premium materials and expert craftsmanship. We offer various flooring options for every room.',
+                    features: ['Hardwood installation', 'Tile work', 'Carpet laying', 'Vinyl flooring', 'Subfloor preparation'],
+                    image: 'https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/what-to-expect-during-your-hard-surface-flooring-installation-2023-step-2.jpg',
+                    path: '/services/flooring-installation'
+                }
+            ],
+            process: [
+                {
+                    step: '01',
+                    title: 'Consultation',
+                    description: 'We discuss your vision, budget, and timeline to create a customized plan.'
+                },
+                {
+                    step: '02',
+                    title: 'Design & Planning',
+                    description: 'Our experts create detailed designs and project timelines with cost estimates.'
+                },
+                {
+                    step: '03',
+                    title: 'Execution',
+                    description: 'Professional craftsmen execute the work with minimal disruption to your life.'
+                },
+                {
+                    step: '04',
+                    title: 'Completion',
+                    description: 'Final walkthrough, cleanup, and warranty information provided.'
+                }
+            ],
             'full-house-refurbishment':{
                 title: 'Full House Refurbishment',
                 introText: 'From foundation to finishing touches, we handle every aspect of your full-house refurbishment. Our comprehensive approach ensures a cohesive design and seamless execution, transforming your entire home into a functional and beautiful space. We coordinate all trades and manage the project from start to finish, providing a stress-free experience.',
@@ -307,11 +366,101 @@ const pageContent = [
         }
     },
     {
+        pageName: 'about',
+        content: {
+            banner: {
+                heading: 'Crafting spaces that tell a story.',
+                subheading: 'We believe that great design is a conversation between form and function, tailored to your unique vision.',
+                imageUrl: 'https://placehold.co/1600x900/E5E7EB/4B5563?text=About+Us',
+            },
+            whoWeAre: {
+                heading: 'Who We Are',
+                paragraphs: [
+                    'Founded on the principle that every space has potential, RenovatePro has been transforming homes and businesses for over a decade. Our journey began with a simple idea: to make high-quality, personalized renovation accessible and stress-free. We’re a team of passionate designers, skilled builders, and project managers dedicated to bringing your dreams to life, one detail at a time.',
+                    'From the initial consultation to the final reveal, we work collaboratively with our clients, ensuring their voice is heard at every step. We pride ourselves on our transparency, craftsmanship, and a commitment to exceeding expectations.',
+                ],
+                imageUrl: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Our+Team',
+            },
+            whatWeValue: {
+                heading: 'What We Value',
+                values: [
+                    {
+                        title: 'Integrity',
+                        description: 'We operate with honesty and transparency, building trust through clear communication and ethical practices.',
+                    },
+                    {
+                        title: 'Craftsmanship',
+                        description: 'Our work is a testament to our skill and attention to detail. We are dedicated to delivering lasting quality in every project.',
+                    },
+                    {
+                        title: 'Collaboration',
+                        description: 'Your vision is our blueprint. We believe the best results come from working together, respecting your ideas and insights.',
+                    },
+                    {
+                        title: 'Innovation',
+                        description: 'We stay ahead of design trends and construction technologies to offer modern, efficient, and creative solutions.',
+                    },
+                ],
+            },
+            members: [
+                {
+                    name: 'Jane Doe',
+                    title: 'Chief Design Officer',
+                    intro: 'A visionary in modern and sustainable design.',
+                    imageUrl: 'https://placehold.co/400x500/E5E7EB/4B5563?text=Jane+Doe',
+                    link:"#"
+                },
+                {
+                    name: 'John Smith',
+                    title: 'CEO & Lead Builder',
+                    intro: 'Dedicated to precision and bringing blueprints to life.',
+                    imageUrl: 'https://placehold.co/400x500/E5E7EB/4B5563?text=John+Smith',
+                    link:"#"
+                },
+                {
+                    name: 'Emily White',
+                    title: 'Head of Operations',
+                    intro: 'Ensuring every project runs smoothly from start to finish.',
+                    imageUrl: 'https://placehold.co/400x500/E5E7EB/4B5563?text=Emily+White',
+                    link:"#"
+                },
+            ],
+        }
+    },
+    {
         pageName: 'contact',
         content: {
-            phone: '555-123-4567',
-            email: 'info@refurbishment.com',
-            address: '123 Main St, Anytown, USA'
+            title: 'Need more information?',
+            contactText: 'Contact us or schedule a consultation with our renovation expert',
+            image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Renovation+Experts',
+            email: 'contact@hrc.com',
+            locations: [
+                {
+                    name: 'US East Office',
+                    phone: '(111) 222-3333',
+                    address: '345 Main St, New York, NY 10001',
+                },
+                {
+                    name: 'US Central Office',
+                    phone: '(444) 555-6666',
+                    address: '123 Ocean Blvd, Dallas, TX 12345',
+                },
+            ],
+            socialMediaLinks: {
+                facebook: "#",
+                instagram: "#",
+                youtube: "#"
+            }
+        }
+    },
+    {
+        pageName: 'projects',
+        content: {
+            header: {
+                title: 'View our projects. See our process.',
+                description: 'In between a client’s vision and the project’s final transformation, there are many phases, stops, and decisions to be made for a home renovation.\n Explore our projects by city to get an insider’s look at our process. You’ll see how we approach each project and what drives construction and design decisions. With bold before-and-after photos and behind-the-scenes videos, you’ll be inspired to start your new chapter.',
+                imageUrl: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Project+Banner'
+            },
         }
     }
 ];

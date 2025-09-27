@@ -60,7 +60,7 @@ const Contact = () => {
         )
     };
 
-    const info = {
+    const content = {
             title: 'Need more information?',
             contactText: 'Contact us or schedule a consultation with our renovation expert',
             image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Renovation+Experts',
@@ -219,7 +219,7 @@ const Contact = () => {
                         {/* Placeholder image */}
                         <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
                             <img
-                                src={info.image}
+                                src={content.image}
                                 alt="Renovation experts standing in a kitchen"
                                 className="w-full h-full object-cover rounded-lg"
                             />
@@ -227,16 +227,16 @@ const Contact = () => {
 
                         {/* Contact Information */}
                         <div className="text-gray-700 space-y-4">
-                            <h2 className="text-xl font-semibold mb-2">{info.title}</h2>
-                            <p className="text-sm">{info.contactText}</p>
+                            <h2 className="text-xl font-semibold mb-2">{content.title}</h2>
+                            <p className="text-sm">{content.contactText}</p>
                             <p className="text-sm">
-                                <a href={`mailto: ${info.email}`} className="font-semibold text-gray-900 hover:underline">{info.email}</a>
+                                <a href={`mailto: ${content.email}`} className="font-semibold text-gray-900 hover:underline">{content.email}</a>
                             </p>
                         </div>
 
                         {/* Locations */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
-                            {info.locations.map(loc=> (
+                            {content.locations.map(loc=> (
                                 <div>
                                     <h3 className="font-semibold text-gray-900 mb-2">{loc.name}</h3>
                                     <p>{loc.phone}</p>
@@ -248,9 +248,9 @@ const Contact = () => {
 
                         {/* Social Media Icons */}
                         <div className="flex space-x-6 items-center text-gray-500">
-                            <a href={info.socialMediaLinks.facebook} className="hover:text-gray-900 transition-colors">{socialIcons.facebook}</a>
-                            <a href={info.socialMediaLinks.instagram} className="hover:text-gray-900 transition-colors">{socialIcons.instagram}</a>
-                            <a href={info.socialMediaLinks.youtube} className="hover:text-gray-900 transition-colors">{socialIcons.youtube}</a>
+                            <a href={content.socialMediaLinks.facebook} className="hover:text-gray-900 transition-colors">{socialIcons.facebook}</a>
+                            <a href={content.socialMediaLinks.instagram} className="hover:text-gray-900 transition-colors">{socialIcons.instagram}</a>
+                            <a href={content.socialMediaLinks.youtube} className="hover:text-gray-900 transition-colors">{socialIcons.youtube}</a>
                         </div>
                     </div>
                 </div>
