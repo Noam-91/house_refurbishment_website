@@ -10,7 +10,7 @@ import ServiceDetail from "./pages/service/ServiceDetail.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import Projects from "./pages/project/Projects.tsx";
-import Login from "./pages/auth/Login.tsx";
+import Login from "./pages/Login.tsx";
 import store from "./redux/store.ts";
 import {Provider} from "react-redux";
 
