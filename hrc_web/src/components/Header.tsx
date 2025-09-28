@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone} from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {

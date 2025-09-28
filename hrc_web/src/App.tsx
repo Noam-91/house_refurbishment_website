@@ -14,6 +14,8 @@ import Login from "./pages/Login.tsx";
 import store from "./redux/store.ts";
 import {Provider} from "react-redux";
 import Blogs from "./pages/blog/Blogs.tsx";
+import ProjectDetail from "./pages/project/ProjectDetail.tsx";
+import BlogDetail from "./pages/blog/BlogDetail.tsx";
 
 const App: React.FC = () => {
     return (
@@ -27,7 +29,9 @@ const App: React.FC = () => {
                             <Route path="/services" element={<Services />} />
                             <Route path={"/services/:workType"} element={<ServiceDetail />} />
                             <Route path={"/projects"} element={<Projects />} />
+                            <Route path={"/projects/:id"} element={<ProjectDetail />} />
                             <Route path={"/blogs"} element={<Blogs />} />
+                            <Route path={"/blogs/:id"} element={<BlogDetail />} />
                             <Route path={"/about"} element={<About />} />
                             <Route path={"/contact"} element={<Contact />} />
                             <Route path="*" element={<NotFound />} />
