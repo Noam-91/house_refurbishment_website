@@ -1,9 +1,11 @@
-import {useEffect, useState} from 'react';
-import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
-import {login} from "../../redux/auth/auth.thunks.ts";
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from "../../redux/hooks.ts";
+import { login } from "../../redux/auth/auth.thunks.ts";
+import { useNavigate } from 'react-router-dom';
 
-const LoginCard = ({switchCardFn}) => {
+const LoginCard = () => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const { status, error } = useAppSelector((state) => state.auth);
 
     /** Login Form */
@@ -97,7 +99,7 @@ const LoginCard = ({switchCardFn}) => {
                         <label htmlFor="remember-me" className="ml-2 block text-gray-900">Remember me</label>
                     </div>
                     <span className="font-medium text-blue-600 hover:text-blue-500 cursor-pointer"
-                          onClick={() => switchCardFn('forgot-password')}>Forgot
+                          onClick={() => navigate('/auth/forgot-password')}>Forgot
                         password?</span>
                 </div>
                 <button

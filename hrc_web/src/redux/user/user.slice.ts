@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type IUser from "../../shared/models/IUser.ts";
 import type { RootState } from "../store";
-import {editUser, getAllUsers} from "./user.thunks.ts";
+import {editUser, getAllUsers, resetPassword} from "./user.thunks.ts";
 
 interface IUserListState {
     userList: IUser[];
@@ -56,6 +56,20 @@ const userSlice = createSlice({
                 state.error = null;
             })
             .addCase(editUser.rejected, (state,action) => {
+                state.status = 'failed';
+                state.error = action.payload as string;
+            })
+
+            // Reset Password
+            .addCase(resetPassword.pending, (state) => {
+                state.status = 'loading';
+                state.error = null;
+            })
+            .addCase(resetPassword.fulfilled, (state) => {
+                state.status = 'succeeded';
+                state.error = null;
+            })
+            .addCase(resetPassword.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.payload as string;
             });

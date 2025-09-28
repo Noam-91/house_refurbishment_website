@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import {useAppDispatch} from "../../redux/hooks.ts";
+import { useAppDispatch } from "../../redux/hooks.ts";
 import { forgotPassword } from '../../redux/auth/auth.thunks.ts';
+import { useNavigate } from 'react-router-dom';
 
-const ForgotPasswordCard = ({switchCardFn}) => {
+const ForgotPasswordCard = () => {
     const [email, setEmail] = useState('');
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,7 +15,6 @@ const ForgotPasswordCard = ({switchCardFn}) => {
     };
 
     return (
-        // Removed the outer div to align with the LoginCard's structure.
         <div className="w-1/2 p-12 flex flex-col justify-center">
             <h2 className="text-3xl font-semibold mb-6 text-neutral-800 text-center">Forgot Password?</h2>
             <p className="text-sm text-gray-600 mb-8 text-center">
@@ -40,7 +41,12 @@ const ForgotPasswordCard = ({switchCardFn}) => {
                     Send Reset Link
                 </button>
                 <div className="text-center mt-4">
-                    <span onClick={() => switchCardFn('login')} className="text-sm text-blue-600 hover:text-blue-500 cursor-pointer">Back to Login</span>
+                    <span
+                        onClick={() => navigate('/auth/login')}
+                        className="text-sm text-blue-600 hover:text-blue-500 cursor-pointer"
+                    >
+                        Back to Login
+                    </span>
                 </div>
             </form>
         </div>

@@ -73,7 +73,6 @@ const authSlice = createSlice({
                 state.error = action.payload as string;
             })
 
-
     }
 });
 
