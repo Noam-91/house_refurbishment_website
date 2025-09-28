@@ -4,6 +4,7 @@ const router = express.Router();
 import User from "../domain/User.js"
 import bcrypt from 'bcrypt';
 import {authenticateToken} from "../middlewares/AuthMw.js";
+import jwt from "jsonwebtoken";
 
 // PUT /api/users/:id
 // Edit a specific user profile.
@@ -29,6 +30,26 @@ router.put('/users/:id', authenticateToken, async (req, res) => {
 
     } catch (err) {
         res.status(500).json({ error: 'Error updating user profile.', details: err.message });
+    }
+});
+
+
+// PUT
+// password reset
+router.put('/reset-password', async (req, res) => {
+    try{
+        const {token, password} = req.body;
+        const decoded = jwt.verify(token, JWT_SECRET);
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(400).json({ message: 'User not found.' });
+        }
+        const hashedPassword = await bcrypt.hash(password, 10);
+        user.password = hashedPassword;
+        await user.save();
+        res.status(200).json({ message: 'Password reset successfully.' });
+    }catch (e) {
+        res.status(500).json({ error: 'Error during password reset.', details: e.message });
     }
 });
 

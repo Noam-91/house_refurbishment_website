@@ -15,14 +15,32 @@ router.post('/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = new User({ email, password: hashedPassword });
         await user.save();
+        // TODO: send email with password reset link
         res.status(201).json({ message: 'User registered successfully. Please check your email for activation.' });
     } catch (err) {
         res.status(500).json({ error: 'Error registering user.', details: err.message });
     }
 });
 
+// POST
+// forgot password
+router.post('/forgot-password', async (req, res) => {
+    try{
+        const {email} = req.body;
+        const user = await User.findOne({email});
+        if (!user) {
+            return res.status(400).json({ message: 'User not found.' });
+        }
+        // TODO: send email with password reset link
+        res.status(200).json({ message: 'Password reset link sent to your email.' });
+    }catch (e) {
+        res.status(500).json({ error: 'Error during password reset.', details: e.message });
+    }
+});
+
+
 // GET /api/auth/activate/:token
-// This is a placeholder for email activation logic.
+// email activation.
 router.get('/activate/:token', async (req, res) => {
     // In a real app, you would verify the token and update the user's isActive status.
     res.json({ message: `Activation for token '${req.params.token}' is simulated.` });
