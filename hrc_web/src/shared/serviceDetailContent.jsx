@@ -1,33 +1,81 @@
+import {
+    ClipboardDocumentListIcon,
+    CubeTransparentIcon,
+    BoltIcon,
+    WrenchScrewdriverIcon,
+    SparklesIcon,
+    PaintBrushIcon,
+    LightBulbIcon,
+    RectangleGroupIcon,
+    CheckBadgeIcon,
+} from '@heroicons/react/24/outline';
+
 export const fullHouseRefurbishmentServiceData = {
     title: 'Full House Refurbishment',
     introText: 'From foundation to finishing touches, we handle every aspect of your full-house refurbishment. Our comprehensive approach ensures a cohesive design and seamless execution, transforming your entire home into a functional and beautiful space. We coordinate all trades and manage the project from start to finish, providing a stress-free experience.',
-    introImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c6c757?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+    introImage: 'https://cdn.mos.cms.futurecdn.net/JnvdMJk6cumB3v5FYqEVLk.jpg',
     introImageLocation: 'Location: Anytown, USA',
     whatsInvolved: [
-        { title: 'Planning & Design', description: 'Detailed blueprints, 3D renderings, and material selection.' },
-        { title: 'Structural & Demolition', description: 'Safe and precise removal of walls, floors, and other structural elements.' },
-        { title: 'Electrical & Plumbing', description: 'Complete rewiring and repiping to modern standards.' },
-        { title: 'HVAC Integration', description: 'Installation of new heating, ventilation, and air conditioning systems.' },
-        { title: 'Insulation & Drywall', description: 'Upgrading insulation for energy efficiency and preparing walls for finishes.' },
-        { title: 'Flooring & Tiling', description: 'Professional installation of all types of flooring and wall tiles.' },
-        { title: 'Painting & Decorating', description: 'Interior and exterior painting, wallpapering, and finishing.' },
-        { title: 'Fixtures & Fittings', description: 'Installation of light fixtures, faucets, and other hardware.' },
-        { title: 'Quality Assurance', description: 'Regular checks and final inspections to ensure every detail meets our high standards.' }
+        {
+            title: 'Planning & Design',
+            description: 'Detailed blueprints, 3D renderings, and material selection.',
+            icon: <ClipboardDocumentListIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Structural & Demolition',
+            description: 'Safe and precise removal of walls, floors, and other structural elements.',
+            icon: <CubeTransparentIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Electrical & Plumbing',
+            description: 'Complete rewiring and repiping to modern standards.',
+            icon: <BoltIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'HVAC Integration',
+            description: 'Installation of new heating, ventilation, and air conditioning systems.',
+            icon: <WrenchScrewdriverIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Insulation & Drywall',
+            description: 'Upgrading insulation for energy efficiency and preparing walls for finishes.',
+            icon: <SparklesIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Flooring & Tiling',
+            description: 'Professional installation of all types of flooring and wall tiles.',
+            icon: <RectangleGroupIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Painting & Decorating',
+            description: 'Interior and exterior painting, wallpapering, and finishing.',
+            icon: <PaintBrushIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Fixtures & Fittings',
+            description: 'Installation of light fixtures, faucets, and other hardware.',
+            icon: <LightBulbIcon className="h-10 w-10 text-neutral-800" />
+        },
+        {
+            title: 'Quality Assurance',
+            description: 'Regular checks and final inspections to ensure every detail meets our high standards.',
+            icon: <CheckBadgeIcon className="h-10 w-10 text-neutral-800" />
+        },
     ],
     workflowTimeline: [
-        { title: 'Initial Consultation', duration: '1-2 weeks', description: 'We discuss your vision, budget, and project scope.', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c6c757?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+        { title: 'Initial Consultation', duration: '1-2 weeks', description: 'We discuss your vision, budget, and project scope.', image: 'https://soteriahr.com/wp-content/uploads/2025/05/Soteria-HR-Blog-Images-22.png' },
         { title: 'Design & Planning', duration: '2-4 weeks', description: 'Finalizing designs, material selections, and obtaining permits.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-        { title: 'Demolition & Prep', duration: '1-2 weeks', description: 'Safe removal of existing structures and preparing the site.', image: 'https://images.unsplash.com/photo-1599809275671-bfb5638c4c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-        { title: 'Structural & Utility Work', duration: '4-6 weeks', description: 'Executing major structural, electrical, and plumbing work.', image: 'https://images.unsplash.com/photo-1560417978-62024283c847?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-        { title: 'Finishing Touches', duration: '2-3 weeks', description: 'Painting, flooring, cabinetry, and fixture installations.', image: 'https://images.unsplash.com/photo-1588880331179-bc224855a73e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-        { title: 'Final Handover', duration: '1 week', description: 'Final walk-through, cleanup, and providing warranty information.', image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0b21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
+        { title: 'Demolition & Prep', duration: '1-2 weeks', description: 'Safe removal of existing structures and preparing the site.', image: 'https://thehomestud.com/wp-content/uploads/2017/11/kitchenupdate.jpg' },
+        { title: 'Structural & Utility Work', duration: '4-6 weeks', description: 'Executing major structural, electrical, and plumbing work.', image: 'https://budlong.com/wp-content/uploads/2025/04/The-Role-of-a-Plumbing-Engineer-in-MEP-Systems-1.webp' },
+        { title: 'Finishing Touches', duration: '2-3 weeks', description: 'Painting, flooring, cabinetry, and fixture installations.', image: 'https://mountainvistapainters.com/wp-content/uploads/2025/08/house-painter.webp' },
+        { title: 'Final Handover', duration: '1 week', description: 'Final walk-through, cleanup, and providing warranty information.', image: 'https://cdn.homecrux.com/wp-content/uploads/2022/07/Modern-Interior-Design.jpg' }
     ],
     previousProjects: [
-        { location: 'Anytown, USA', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c6c757?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80' },
-        { location: 'Greenwich, CT', image: 'https://images.unsplash.com/photo-1588880331179-bc224855a73e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80' },
-        { location: 'Brooklyn, NY', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80' },
-        { location: 'Los Angeles, CA', image: 'https://images.unsplash.com/photo-1513584684333-e1227182285a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80' },
-        { location: 'Dallas, TX', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80' }
+        { location: 'Anytown, USA', image: 'https://stylecurator.com.au/wp-content/uploads/2025/05/ChatterboxHouse_living-room-curved-sofa.jpg' },
+        { location: 'Greenwich, CT', image: 'https://www.thespruce.com/thmb/4Mxuujjo8BQ3woAAFhtUqNRslgo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignbyEmilyHenderson_MountainHouseLivingRoom_PhotobySaraLigorria-TrampforEHD_9-79d20b8810c24403b627c6ee543dd538.jpg' },
+        { location: 'Brooklyn, NY', image: 'https://www.decorilla.com/online-decorating/wp-content/uploads/2024/11/Neutral-tones-balance-the-refined-aesthetic-in-this-luxury-home-interior-by-Decorilla-1024x574.jpeg' },
+        { location: 'Los Angeles, CA', image: 'https://cdn.decoist.com/wp-content/uploads/2019/09/Spacious-and-stylish-interior-of-the-LL-House.jpg' },
+        { location: 'Dallas, TX', image: 'https://i.pinimg.com/736x/b7/5e/81/b75e81dba72eb35c9c0b7e784f14a569.jpg' }
     ],
     faqs: [
         { question: 'How long does a full house refurbishment take?', answer: 'The timeline varies based on the scope, but typically ranges from 3 to 6 months.' },

@@ -3,7 +3,7 @@ import Header from '../../components/Header.tsx';
 import Footer from '../../components/Footer.tsx';
 import { motion } from 'framer-motion';
 import { Wrench, Paintbrush, Home, Lightbulb, Layers, CheckCircle, ArrowRight } from 'lucide-react';
-import {Link, Outlet} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Services: React.FC = () => {
     const services = [
@@ -81,7 +81,7 @@ const Services: React.FC = () => {
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="https://www.epicsurface.com/storage/2023/01/en-2023-interior-design-trends-5-trends-for-the-upcoming-months_63c7dbfae0edf.jpg"
+                            src="https://www.shutterstock.com/image-illustration/commode-chair-decor-living-room-600nw-1820572562.jpg"
                             alt="Modern home interior renovation"
                             className="w-full h-full object-cover"
                             loading="eager"
@@ -89,7 +89,7 @@ const Services: React.FC = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-64">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -101,45 +101,25 @@ const Services: React.FC = () => {
                                 Chapter renovation
                             </h1>
 
-                            <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                            <p className="text-xl sm:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
                                 From stylish kitchen renovations to bathroom remodels to full-home projects, Chapter makes it easy to turn your vision into a reality, all while keeping your project on budget and on schedule. We're fully licensed and insured and have a depth of experience to elevate your home.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                                 <Link
                                     to="/contact"
-                                    className="inline-flex items-center px-8 py-4 bg-indigo-700 text-white text-lg font-semibold rounded-lg hover:bg-indigo-800 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                                    className="inline-flex items-center px-8 py-4 bg-indigo-700 text-white text-lg font-semibold hover:bg-indigo-800 transition-all duration-200 transform hover:scale-105 shadow-lg"
                                 >
                                     Talk to us
                                     <ArrowRight className="ml-2 w-5 h-5" />
                                 </Link>
-
-                                <button className="inline-flex items-center px-8 py-4 bg-white bg-opacity-10 text-white text-lg font-semibold rounded-lg hover:bg-opacity-20 transition-all duration-200 backdrop-blur-sm border border-white border-opacity-20">
-                                    Watch Our Work
-                                </button>
                             </div>
                         </motion.div>
                     </div>
-
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 1 }}
-                        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                    >
-                        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                            <motion.div
-                                animate={{ y: [0, 12, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity }}
-                                className="w-1 h-3 bg-white rounded-full mt-2"
-                            />
-                        </div>
-                    </motion.div>
                 </section>
 
                 {/* Services Grid */}
-                <section className="py-20 bg-white">
+                <section className="py-20  bg-gray-200">
                     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {services.map((service, index) => (
@@ -149,7 +129,7 @@ const Services: React.FC = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: index * 0.1 }}
                                         viewport={{ once: true }}
-                                        className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                                        className="bg-gray-50 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                                     >
                                         <img
                                             src={service.image}
@@ -184,7 +164,7 @@ const Services: React.FC = () => {
                 </section>
 
                 {/* Process Section */}
-                <section className="py-20 bg-gray-50">
+                <section className="py-20">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -212,7 +192,7 @@ const Services: React.FC = () => {
                                     viewport={{ once: true }}
                                     className="text-center"
                                 >
-                                    <div className="bg-indigo-700 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                                    <div className="bg-indigo-700 text-white w-16 h-16  flex items-center justify-center text-xl font-bold mx-auto mb-4">
                                         {step.step}
                                     </div>
                                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -245,7 +225,7 @@ const Services: React.FC = () => {
                             </p>
                             <Link
                                 to="/contact"
-                                className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white text-lg font-semibold rounded-lg hover:bg-emerald-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                                className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white text-lg font-semibold hover:bg-emerald-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
                             >
                                 Talk to us
                                 <ArrowRight className="ml-2 w-5 h-5" />

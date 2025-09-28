@@ -2,12 +2,12 @@ import React, {useEffect} from 'react';
 import Header from '../../components/Header.tsx';
 import Footer from '../../components/Footer.tsx';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import {Link, useParams} from 'react-router-dom';
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import serviceMap from "../../shared/serviceDetailContent.js"
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import serviceMap from "../../shared/serviceDetailContent.jsx"
 
 
 const carouselSettings = {
@@ -49,8 +49,8 @@ const ServiceDetail: React.FC = () => {
             <Header />
             <main className="flex-grow">
                 {/* Introduction Section */}
-                <section className="bg-white py-16 md:py-24 overflow-hidden">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
+                <section className="h-full bg-white py-16 md:py-24 overflow-hidden">
+                    <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -76,47 +76,48 @@ const ServiceDetail: React.FC = () => {
                     </div>
                 </section>
 
-                <hr className="my-8 border-t border-gray-200" />
 
                 {/* What is Involved Section */}
-                <section className="bg-gray-50 py-16 md:py-24">
+                <section className="bg-orange-100 py-16 md:py-24">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">What is Involved</h2>
+                        <h2 className="text-4xl sm:text-5xl font-semibold text-center text-neutral-800 mb-16">
+                            What is Involved
+                        </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {whatsInvolved.map((card, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
-                                    className="bg-white rounded-lg shadow-md p-6"
+                                    initial={{opacity: 0, y: 20}}
+                                    whileInView={{opacity: 1, y: 0}}
+                                    transition={{duration: 0.5, delay: index * 0.1}}
+                                    viewport={{once: true}}
+                                    className="bg-white rounded-lg shadow-sm p-8 hover:shadow-lg transition-shadow duration-300"
                                 >
-                                    <h3 className="text-xl font-semibold text-indigo-700 mb-2">{card.title}</h3>
-                                    <p className="text-gray-600">{card.description}</p>
+                                    <span className="text-4xl block mb-4">{card.icon}</span>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">{card.title}</h3>
+                                    <p className="text-gray-600 leading-relaxed">{card.description}</p>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                <hr className="my-8 border-t border-gray-200" />
-
                 {/* Workflow & Timeline Section */}
                 <section className="bg-blue-50 py-16 md:py-24">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Workflow & Estimated Timeline</h2>
+                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Workflow & Estimated
+                            Timeline</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {workflowTimeline.map((step, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
+                                    initial={{opacity: 0, y: 20}}
+                                    whileInView={{opacity: 1, y: 0}}
+                                    transition={{duration: 0.5, delay: index * 0.1}}
+                                    viewport={{once: true}}
                                     className="bg-white rounded-lg shadow-md overflow-hidden"
                                 >
-                                    <img src={step.image} alt={step.title} className="w-full h-48 object-cover" />
+                                    <img src={step.image} alt={step.title} className="w-full h-48 object-cover"/>
                                     <div className="p-6">
                                         <h3 className="text-xl font-semibold text-indigo-700 mb-2">{step.title}</h3>
                                         <p className="text-sm font-medium text-gray-500 mb-4">{step.duration}</p>
@@ -128,17 +129,15 @@ const ServiceDetail: React.FC = () => {
                     </div>
                 </section>
 
-                <hr className="my-8 border-t border-gray-200" />
-
                 {/* Get Inspired Section */}
                 <section className="bg-yellow-50 py-16 md:py-24">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Get Inspired</h2>
+                        <h2 className="text-5xl font-bold text-center text-gray-900 mb-12">Get Inspired</h2>
                         <Slider {...carouselSettings}>
                             {previousProjects.map((project, index) => (
                                 <div key={index} className="px-2">
-                                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                                        <img src={project.image} alt={`Previous project example ${index + 1}`} className="w-full h-72 object-cover" />
+                                    <div className="relative overflow-hidden shadow-lg">
+                                        <img src={project.image} alt={`Previous project example ${index + 1}`} className="w-full h-[36rem] object-cover" />
                                         <span className="absolute bottom-4 left-4 text-white text-sm font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-full">{project.location}</span>
                                     </div>
                                 </div>
@@ -146,8 +145,6 @@ const ServiceDetail: React.FC = () => {
                         </Slider>
                     </div>
                 </section>
-
-                <hr className="my-8 border-t border-gray-200" />
 
                 {/* FAQs Section */}
                 <section className="bg-gray-50 py-16 md:py-24">
