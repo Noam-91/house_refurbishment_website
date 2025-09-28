@@ -1,7 +1,7 @@
 // --- Auth APIs ---
 import express from "express";
 const router = express.Router();
-import User from "../mongo/User.js"
+import User from "../domain/User.js"
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import {authenticateToken} from "../middlewares/AuthMw.js";

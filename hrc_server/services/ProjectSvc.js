@@ -2,7 +2,7 @@
 import express from "express";
 const router = express.Router();
 import {authenticateToken, checkAdminRole} from '../middlewares/AuthMw.js';
-import Project  from "../mongo/Project.js";
+import Project  from "../domain/Project.js";
 
 // GET /api/project
 // Get a paginated list of projects with optional filters.

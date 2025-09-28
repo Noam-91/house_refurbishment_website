@@ -1,7 +1,7 @@
 // --- Blog APIs ---
 import express from "express";
 const router = express.Router();
-import Blog from '../mongo/Blog.js';
+import Blog from '../domain/Blog.js';
 import {authenticateToken,checkAdminRole} from "../middlewares/AuthMw.js";
 
 // GET /api/blog

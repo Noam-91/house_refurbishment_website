@@ -14,11 +14,11 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
 // --- Import Mongoose Models ---
-import User from "./mongo/User.js";
-import Blog from './mongo/Blog.js';
-import Project  from "./mongo/Project.js";
-import CompanyInfo from './mongo/CompanyInfo.js';
-import PageContent  from "./mongo/PageContent.js";
+import User from "./domain/User.js";
+import Blog from './domain/Blog.js';
+import Project  from "./domain/Project.js";
+import CompanyInfo from './domain/CompanyInfo.js';
+import PageContent  from "./domain/PageContent.js";
 
 // --- Configuration ---
 const MONGODB_URI = process.env.MONGODB_URI;

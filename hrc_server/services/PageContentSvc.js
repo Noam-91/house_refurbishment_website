@@ -2,7 +2,7 @@
 import express from "express";
 const router = express.Router();
 import {authenticateToken, checkAdminRole} from '../middlewares/AuthMw.js';
-import PageContent  from "../mongo/PageContent.js";
+import PageContent  from "../domain/PageContent.js";
 
 // GET /api/pageContent
 // Get all page content records.

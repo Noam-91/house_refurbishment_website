@@ -1,7 +1,7 @@
 // --- Company Info API ---
 import express from "express";
 const router = express.Router();
-import CompanyInfo from '../mongo/CompanyInfo.js';
+import CompanyInfo from '../domain/CompanyInfo.js';
 import {authenticateToken, checkAdminRole} from '../middlewares/AuthMw.js';
 
 // GET /api/companyInfo
