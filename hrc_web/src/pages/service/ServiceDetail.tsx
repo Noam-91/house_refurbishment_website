@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import Header from '../components/Header.tsx';
-import Footer from '../components/Footer.tsx';
+import Header from '../../components/Header.tsx';
+import Footer from '../../components/Footer.tsx';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import {Link, useParams} from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import serviceMap from "../shared/serviceDetailContent.js"
+import serviceMap from "../../shared/serviceDetailContent.js"
 
 
 const carouselSettings = {

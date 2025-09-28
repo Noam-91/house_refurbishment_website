@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../../components/Header.tsx';
+import Footer from '../../components/Footer.tsx';
 import { motion } from 'framer-motion';
 import { Wrench, Paintbrush, Home, Lightbulb, Layers, CheckCircle, ArrowRight } from 'lucide-react';
 import {Link, Outlet} from 'react-router-dom';

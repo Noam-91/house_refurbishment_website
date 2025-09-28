@@ -1,5 +1,5 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../../components/Footer.tsx";
+import Header from "../../components/Header.tsx";
 import {useState} from "react";
 
 const content = {
