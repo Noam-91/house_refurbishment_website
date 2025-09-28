@@ -2,7 +2,7 @@
 import express from "express";
 const router = express.Router();
 import Blog from '../domain/Blog.js';
-import {authenticateToken,checkAdminRole} from "../middlewares/AuthMw.js";
+import {authenticateToken} from "../middlewares/AuthMw.js";
 
 // GET /api/blog
 // Get a paginated list of all blog posts, sorted by date.

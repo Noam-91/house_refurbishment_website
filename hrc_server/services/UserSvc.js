@@ -3,9 +3,7 @@ import express from "express";
 const router = express.Router();
 import User from "../domain/User.js"
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import {authenticateToken} from "../middlewares/AuthMw.js";
-const JWT_SECRET = process.env.JWT_SECRET;
 
 // PUT /api/users/:id
 // Edit a specific user profile.
