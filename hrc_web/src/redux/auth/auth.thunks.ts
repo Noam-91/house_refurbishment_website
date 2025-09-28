@@ -3,7 +3,7 @@ import axios from 'axios';
 import type IUser from "../../shared/models/IUser.ts";
 import type { ILoginFormData } from "../../shared/models/IUser.ts";
 
-const AUTH_API_PREFIX = `${process.env.SERVER_API}/api/auth`;
+const AUTH_API_PREFIX = `${import.meta.env.VITE_SERVER_API}/api/auth`;
 
 // Login, POST
 export const login = createAsyncThunk<IUser,ILoginFormData>(

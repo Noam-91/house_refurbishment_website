@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type IUser from "../../shared/models/IUser.ts";
 
-const USER_API_PREFIX = `${process.env.SERVER_API}/api/users`;
+const USER_API_PREFIX = `${import.meta.env.VITE_SERVER_API}/api/users`;
 
 // Edit User, PUT
 export const editUser = createAsyncThunk<IUser,IUser>(
