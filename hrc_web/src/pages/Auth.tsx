@@ -2,7 +2,8 @@ import { useLocation } from 'react-router-dom';
 import LoginCard from "../components/auth/LoginCard.tsx";
 import ForgotPasswordCard from "../components/auth/ForgotPasswordCard.tsx";
 import ResetPasswordCard from "../components/auth/ResetPasswordCard.tsx";
-
+import Header from "../components/Header.tsx";
+import Footer from '../components/Footer.tsx';
 
 const Auth = () => {
     const location = useLocation();
@@ -26,23 +27,28 @@ const Auth = () => {
     const currentCard = getCardType();
 
     return (
-        <div className="flex justify-center items-center min-h-screen p-4 bg-orange-100">
-            <div className="flex w-full max-w-4xl bg-white shadow-xl rounded-3xl overflow-hidden">
-                {/* Left side: Render the correct card based on the path */}
-                {currentCard === 'login' && <LoginCard />}
-                {currentCard === 'forgot-password' && <ForgotPasswordCard />}
-                {currentCard === 'reset-password' && <ResetPasswordCard />}
+        <div>
+            <Header/>
+            <main className="flex justify-center items-center min-h-screen p-4 bg-orange-100">
+                <div className="flex w-full max-w-4xl bg-white shadow-xl rounded-3xl overflow-hidden">
+                    {/* Left side: Render the correct card based on the path */}
+                    {currentCard === 'login' && <LoginCard/>}
+                    {currentCard === 'forgot-password' && <ForgotPasswordCard/>}
+                    {currentCard === 'reset-password' && <ResetPasswordCard/>}
 
-                {/* Right side: Image */}
-                <div className="w-1/2">
-                    <img
-                        src={loginPageContent.image}
-                        alt="A modern home office"
-                        className="h-full w-full object-cover rounded-tr-3xl rounded-br-3xl"
-                    />
+                    {/* Right side: Image */}
+                    <div className="w-1/2">
+                        <img
+                            src={loginPageContent.image}
+                            alt="A modern home office"
+                            className="h-full w-full object-cover rounded-tr-3xl rounded-br-3xl"
+                        />
+                    </div>
                 </div>
-            </div>
+            </main>
+            <Footer/>
         </div>
+
     );
 };
 
