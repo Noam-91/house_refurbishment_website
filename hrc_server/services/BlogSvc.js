@@ -20,7 +20,7 @@ router.get('', async (req, res) => {
         const totalBlogs = await Blog.countDocuments();
 
         res.json({
-            blogs,
+            items: blogs,
             currentPage: page,
             totalPages: Math.ceil(totalBlogs / limit),
             totalBlogs

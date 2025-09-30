@@ -28,7 +28,7 @@ router.get('', async (req, res) => {
         const totalProjects = await Project.countDocuments(filter);
 
         res.json({
-            projects,
+            items: projects,
             currentPage: page,
             totalPages: Math.ceil(totalProjects / limit),
             totalProjects
