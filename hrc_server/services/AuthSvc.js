@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import {authenticateToken} from "../middlewares/AuthMw.js";
-import {sendActivationEmail, sendPasswordRestEmail} from "./EmailSvc.js";
+import {sendActivationEmail, sendActivationSuccessEmail, sendPasswordRestEmail} from "./EmailSvc.js";
 const JWT_SECRET = process.env.JWT_SECRET;
 const CLIENT_SIDE_URL = process.env.CLIENT_BASE_URL || 'http://localhost:5173';
 
@@ -86,8 +86,13 @@ router.get('/activate-account', async (req, res) => {
         user.activationToken = undefined; // Clear the token after use
         await user.save();
 
-        // TODO: Send success response
-        // For a server-side response, you might send a small HTML success page or redirect.
+        // send activation successful email
+        try {
+            await sendActivationSuccessEmail(email);
+        } catch (emailError) {
+            console.warn('Account activated but failed to send success notification email:', emailError);
+        }
+
         res.status(200).json({ message: 'Account successfully activated! You can now log in.' });
 
     } catch (err) {

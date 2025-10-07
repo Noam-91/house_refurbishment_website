@@ -1,8 +1,4 @@
 // Email Service API
-import express from "express";
-const router = express.Router();
-import {authenticateToken} from "../middlewares/AuthMw.js";
-const JWT_SECRET = process.env.JWT_SECRET;
 
 import nodemailer from 'nodemailer';
 
@@ -57,5 +53,39 @@ export async function sendPasswordRestEmail(toEmail, activationLink) {
     } catch (error) {
         console.error('Error sending password reset email:', error);
         throw new Error('Failed to send password reset email.');
+    }
+}
+
+/**
+ * Sends a confirmation email after a user successfully activates their account.
+ * This is the function you requested.
+ * @param {string} toEmail - The recipient's email address.
+ * @returns {Promise<object>} The nodemailer response info object.
+ */
+export async function sendActivationSuccessEmail(toEmail) {
+    const mailOptions = {
+        from: `"Auth Service" <${process.env.EMAIL_USER}>`,
+        to: toEmail,
+        subject: 'Account Activated Successfully!',
+        html: `
+      <h1>Success! Your Account is Ready.</h1>
+      <p>Great news! Your account has been successfully activated and is ready to use.</p>
+      <p>You can now log in using your registered email and password.</p>
+      <div style="padding: 10px 0;">
+        <a href="${process.env.CLIENT_BASE_URL || 'http://localhost:3001'}/login" style="background-color: #007bff; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px;">
+          Go to Login Page
+        </a>
+      </div>
+      <p>Happy connecting!</p>
+    `,
+    };
+
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Activation success email sent: %s', info.messageId);
+        return info;
+    } catch (error) {
+        console.error('Error sending activation success email:', error);
+        // Log the error, but since the account is already active, we shouldn't fail the API response.
     }
 }
