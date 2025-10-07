@@ -1,7 +1,7 @@
 import React from 'react';
 import { Theme } from '@radix-ui/themes';
 import { ToastContainer } from 'react-toastify';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';

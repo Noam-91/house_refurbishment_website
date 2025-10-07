@@ -4,8 +4,12 @@ const router = express.Router();
 import User from "../domain/User.js"
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
 import {authenticateToken} from "../middlewares/AuthMw.js";
+import {sendActivationEmail, sendPasswordRestEmail} from "./EmailSvc.js";
 const JWT_SECRET = process.env.JWT_SECRET;
+const CLIENT_SIDE_URL = process.env.CLIENT_BASE_URL || 'http://localhost:5173';
+
 
 // POST /api/auth/register
 router.post('/register', async (req, res) => {
@@ -15,7 +19,19 @@ router.post('/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = new User({ email, password: hashedPassword });
         await user.save();
-        // TODO: send email with password reset link
+
+        // Construct the activation link
+        const activationToken = crypto.randomBytes(32).toString('hex');
+        const activationLink = `${CLIENT_SIDE_URL}/activate-account?token=${activationToken}&email=${email}`;
+
+        // Send the activation email
+        try {
+            await sendActivationEmail(email, activationLink);
+        } catch (emailError) {
+            // Log the email failure but still respond with success for registration
+            console.error('Registration success, but failed to send activation email:', emailError);
+        }
+
         res.status(201).json({ message: 'User registered successfully. Please check your email for activation.' });
     } catch (err) {
         res.status(500).json({ error: 'Error registering user.', details: err.message });
@@ -31,7 +47,17 @@ router.post('/forgot-password', async (req, res) => {
         if (!user) {
             return res.status(400).json({ message: 'User not found.' });
         }
-        // TODO: send email with password reset link
+
+        // Construct the password reset link
+        const resetToken = crypto.randomBytes(32).toString('hex');
+        const resetLink = `${CLIENT_SIDE_URL}/reset-password?token=${resetToken}&email=${email}`;
+
+        // Send the password reset email
+        try {
+            await sendPasswordRestEmail(email, resetLink);
+        } catch (emailError) {
+            res.status(500).json({ error: 'Error during password reset.', details: e.message });
+        }
         res.status(200).json({ message: 'Password reset link sent to your email.' });
     }catch (e) {
         res.status(500).json({ error: 'Error during password reset.', details: e.message });
@@ -39,11 +65,34 @@ router.post('/forgot-password', async (req, res) => {
 });
 
 
-// GET /api/auth/activate/:token
-// email activation.
-router.get('/activate/:token', async (req, res) => {
-    // In a real app, you would verify the token and update the user's isActive status.
-    res.json({ message: `Activation for token '${req.params.token}' is simulated.` });
+// GET /api/auth/activate-account?token=...&email=...
+router.get('/activate-account', async (req, res) => {
+    try {
+        const { token, email } = req.query;
+
+        // Find the user by email and the token
+        const user = await User.findOne({
+            email: email,
+            activationToken: token,
+            isActive: false // Only look for inactive accounts
+        });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Invalid or expired activation link.' });
+        }
+
+        // Activate the user and clear the token
+        user.isActive = true;
+        user.activationToken = undefined; // Clear the token after use
+        await user.save();
+
+        // TODO: Send success response
+        // For a server-side response, you might send a small HTML success page or redirect.
+        res.status(200).json({ message: 'Account successfully activated! You can now log in.' });
+
+    } catch (err) {
+        res.status(500).json({ error: 'Error during account activation.', details: err.message });
+    }
 });
 
 // POST /api/auth/login
