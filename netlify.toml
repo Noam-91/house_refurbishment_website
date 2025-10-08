@@ -7,8 +7,8 @@ command = "npm run build"
 
 # Publish directory: Path RELATIVE TO THE BASE (hrc_web).
 # It should be just 'build' (or whatever your build tool outputs, like 'dist').
-publish = "build"
+publish = "dist"
 
 # Functions directory: Path RELATIVE TO THE BASE (hrc_web).
 # If you are not using functions, you can remove this line entirely.
-functions = "netlify/functions"
+#functions = "netlify/functions"
