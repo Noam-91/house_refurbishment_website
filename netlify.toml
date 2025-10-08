@@ -1,0 +1,17 @@
+#This file is placed in the root of your 'house_refurbishment_website' repository.
+[build]
+
+#Base directory: The root of your sub-project (where the package.json is).
+base = "hrc_web"
+
+#Build command: This is the command run inside the 'hrc_web' directory.
+#'npm run build' is the standard command for creating a production-ready React build.
+command = "npm run build"
+
+#Publish directory: The path relative to the base directory where the final,
+#compiled static files (the 'build' folder) are located.
+publish = "hrc_web/build"
+
+#Setting the functions directory for serverless functions (optional)
+#If you are not using Netlify Functions, you can remove this line.
+functions = "hrc_web/netlify/functions"
