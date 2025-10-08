@@ -5,11 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import {Link, useParams} from 'react-router-dom';
 import Slider from 'react-slick';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import 'slick-carousel/slick/slick.css';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import 'slick-carousel/slick/slick-theme.css';
 import serviceMap from "../../shared/serviceDetailContent.jsx"
 

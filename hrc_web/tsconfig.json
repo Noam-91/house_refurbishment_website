@@ -1,5 +1,16 @@
+// tsconfig.app.json
 {
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext"
+  },
+  "include": [
+    "src/**/*",
+    "src/custom.d.ts"
+    // 👈 Add the declaration file here
+  ],
   "files": [],
+
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
