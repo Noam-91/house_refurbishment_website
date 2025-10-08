@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type IBlog from "../../shared/models/IUser.ts";
-import type { RootState } from "../store";
 import {getPageBlogs} from "./blog.thunks.ts";
+import type IBlog from "../../shared/models/IBlog.ts";
 
 interface IBlogState {
     blogs: IBlog[];
@@ -31,7 +30,7 @@ const blogSlice = createSlice({
                 state.error = null;
             })
             .addCase(getPageBlogs.fulfilled, (state, action) => {
-                state.blogs = state.blogs+action.payload.items;
+                state.blogs = [...state.blogs, ...action.payload.items];
                 state.status = 'succeeded';
                 state.error = null;
             })

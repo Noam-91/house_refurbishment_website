@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Wrench, Paintbrush, Home, Lightbulb } from 'lucide-react';
+import { ArrowRight, Wrench, Paintbrush, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

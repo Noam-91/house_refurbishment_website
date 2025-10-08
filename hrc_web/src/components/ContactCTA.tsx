@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, ArrowRight } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

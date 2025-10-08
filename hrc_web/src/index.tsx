@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import './styles.css';
+
 
 // Send logs to parent frame (like a preview system)
-function postToParent(level: string, ...args: any[]): void {
+function postToParent(level: string, ...args: unknown[]): void {
     if (window.parent !== window) {
         window.parent.postMessage(
             {
@@ -37,7 +37,7 @@ window.onunhandledrejection = function (event) {
 // Patch console
 (['log', 'warn', 'info', 'error'] as const).forEach((level) => {
     const original = console[level];
-    console[level] = (...args: any[]) => {
+    console[level] = (...args: unknown[]) => {
         postToParent(level, ...args);
         original(...args);
     };
